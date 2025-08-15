@@ -65,7 +65,7 @@ export function ProductCard({ product, farmer, distance, onAddToCart }: ProductC
         <div className="flex items-center justify-between">
           <div>
             <span className="text-2xl font-bold text-gray-900">
-              KSh {product.price.toLocaleString()}
+              RWF {product.price.toLocaleString()}
             </span>
             <span className="text-sm text-gray-500 ml-1">{product.unit}</span>
           </div>
@@ -89,7 +89,7 @@ export function ProductCard({ product, farmer, distance, onAddToCart }: ProductC
         <div className="mt-3 pt-3 border-t border-gray-100">
           <div className="flex items-center text-sm text-gray-600">
             <Truck className="w-4 h-4 mr-1" />
-            <span>Free delivery on orders over KSh 2,000</span>
+            <span>Free delivery on orders over RWF 8,000</span>
           </div>
         </div>
       </div>

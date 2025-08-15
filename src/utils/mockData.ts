@@ -3,16 +3,16 @@ import { User, Product, Farmer, Order, MarketTrend } from '../types';
 export const mockFarmers: Farmer[] = [
   {
     id: '1',
-    name: 'John Kimani',
+    name: 'Jean Baptiste Uwimana',
     email: 'john@greenvalley.com',
     role: 'farmer',
     location: {
-      lat: -1.2921,
-      lng: 36.8219,
-      address: 'Kiambu County, Kenya'
+      lat: -1.9441,
+      lng: 30.0619,
+      address: 'Kigali, Rwanda'
     },
     avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150',
-    phone: '+254712345678',
+    phone: '+250788123456',
     createdAt: new Date('2023-01-15'),
     farm: {
       name: 'Green Valley Farm',
@@ -28,16 +28,16 @@ export const mockFarmers: Farmer[] = [
   },
   {
     id: '2',
-    name: 'Mary Wanjiku',
+    name: 'Marie Claire Mukamana',
     email: 'mary@sunrisefarm.com',
     role: 'farmer',
     location: {
-      lat: -0.0917,
-      lng: 34.7680,
-      address: 'Kakamega County, Kenya'
+      lat: -2.0469,
+      lng: 29.7378,
+      address: 'Rubavu District, Rwanda'
     },
     avatar: 'https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=150',
-    phone: '+254723456789',
+    phone: '+250789234567',
     createdAt: new Date('2022-08-20'),
     farm: {
       name: 'Sunrise Poultry',
@@ -53,16 +53,16 @@ export const mockFarmers: Farmer[] = [
   },
   {
     id: '3',
-    name: 'Peter Mwangi',
+    name: 'Pierre Nkurunziza',
     email: 'peter@goldenfarm.com',
     role: 'farmer',
     location: {
-      lat: -0.3031,
-      lng: 36.0800,
-      address: 'Nakuru County, Kenya'
+      lat: -2.5906,
+      lng: 29.7356,
+      address: 'Huye District, Rwanda'
     },
     avatar: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=150',
-    phone: '+254734567890',
+    phone: '+250790345678',
     createdAt: new Date('2023-03-10'),
     farm: {
       name: 'Golden Harvest Farm',
@@ -84,7 +84,7 @@ export const mockProducts: Product[] = [
     farmerId: '1',
     name: 'Free Range Chicken',
     category: 'chicken',
-    price: 800,
+    price: 3200,
     unit: 'per kg',
     description: 'Premium free-range chicken raised on organic feed with no antibiotics',
     images: [
@@ -99,9 +99,9 @@ export const mockProducts: Product[] = [
       freshness: 95
     },
     location: {
-      lat: -1.2921,
-      lng: 36.8219,
-      address: 'Kiambu County, Kenya'
+      lat: -1.9441,
+      lng: 30.0619,
+      address: 'Kigali, Rwanda'
     },
     createdAt: new Date('2024-01-10'),
     updatedAt: new Date('2024-01-15')
@@ -111,7 +111,7 @@ export const mockProducts: Product[] = [
     farmerId: '1',
     name: 'Farm Fresh Eggs',
     category: 'eggs',
-    price: 15,
+    price: 60,
     unit: 'per piece',
     description: 'Fresh eggs from free-range hens, collected daily',
     images: [
@@ -125,9 +125,9 @@ export const mockProducts: Product[] = [
       freshness: 98
     },
     location: {
-      lat: -1.2921,
-      lng: 36.8219,
-      address: 'Kiambu County, Kenya'
+      lat: -1.9441,
+      lng: 30.0619,
+      address: 'Kigali, Rwanda'
     },
     createdAt: new Date('2024-01-12'),
     updatedAt: new Date('2024-01-16')
@@ -137,7 +137,7 @@ export const mockProducts: Product[] = [
     farmerId: '2',
     name: 'Premium Chicken',
     category: 'chicken',
-    price: 750,
+    price: 3000,
     unit: 'per kg',
     description: 'High-quality chicken with excellent taste and nutrition',
     images: [
@@ -151,9 +151,9 @@ export const mockProducts: Product[] = [
       freshness: 92
     },
     location: {
-      lat: -0.0917,
-      lng: 34.7680,
-      address: 'Kakamega County, Kenya'
+      lat: -2.0469,
+      lng: 29.7378,
+      address: 'Rubavu District, Rwanda'
     },
     createdAt: new Date('2024-01-08'),
     updatedAt: new Date('2024-01-14')
@@ -163,7 +163,7 @@ export const mockProducts: Product[] = [
     farmerId: '3',
     name: 'Organic Chicken Manure',
     category: 'manure',
-    price: 50,
+    price: 200,
     unit: 'per kg',
     description: 'Rich organic fertilizer perfect for vegetable gardens',
     images: [
@@ -177,9 +177,9 @@ export const mockProducts: Product[] = [
       freshness: 90
     },
     location: {
-      lat: -0.3031,
-      lng: 36.0800,
-      address: 'Nakuru County, Kenya'
+      lat: -2.5906,
+      lng: 29.7356,
+      address: 'Huye District, Rwanda'
     },
     createdAt: new Date('2024-01-05'),
     updatedAt: new Date('2024-01-13')
@@ -192,12 +192,12 @@ export const mockOrders: Order[] = [
     customerId: 'customer1',
     farmerId: '1',
     products: [
-      { productId: '1', quantity: 2, price: 800 },
-      { productId: '2', quantity: 12, price: 15 }
+      { productId: '1', quantity: 2, price: 3200 },
+      { productId: '2', quantity: 12, price: 60 }
     ],
-    total: 1780,
+    total: 7120,
     status: 'delivered',
-    deliveryAddress: 'Nairobi CBD, Kenya',
+    deliveryAddress: 'Kigali City Center, Rwanda',
     estimatedDelivery: new Date('2024-01-20'),
     createdAt: new Date('2024-01-18')
   },
@@ -206,11 +206,11 @@ export const mockOrders: Order[] = [
     customerId: 'customer2',
     farmerId: '2',
     products: [
-      { productId: '3', quantity: 3, price: 750 }
+      { productId: '3', quantity: 3, price: 3000 }
     ],
-    total: 2250,
+    total: 9000,
     status: 'shipped',
-    deliveryAddress: 'Kisumu, Kenya',
+    deliveryAddress: 'Butare, Rwanda',
     estimatedDelivery: new Date('2024-01-22'),
     createdAt: new Date('2024-01-19')
   }
@@ -221,9 +221,9 @@ export const mockTrends: MarketTrend[] = [
     category: 'chicken',
     period: 'January 2024',
     demand: 85,
-    averagePrice: 775,
+    averagePrice: 3100,
     prediction: {
-      nextMonth: 820,
+      nextMonth: 3280,
       confidence: 0.87
     }
   },
@@ -231,9 +231,9 @@ export const mockTrends: MarketTrend[] = [
     category: 'eggs',
     period: 'January 2024',
     demand: 92,
-    averagePrice: 14.5,
+    averagePrice: 58,
     prediction: {
-      nextMonth: 15.2,
+      nextMonth: 61,
       confidence: 0.91
     }
   },
@@ -241,9 +241,9 @@ export const mockTrends: MarketTrend[] = [
     category: 'manure',
     period: 'January 2024',
     demand: 68,
-    averagePrice: 48,
+    averagePrice: 192,
     prediction: {
-      nextMonth: 52,
+      nextMonth: 208,
       confidence: 0.79
     }
   }

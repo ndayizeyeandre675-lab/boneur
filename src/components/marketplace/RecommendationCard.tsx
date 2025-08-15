@@ -65,14 +65,14 @@ export function RecommendationCard({
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
               <span className="text-xl font-bold text-gray-900">
-                KSh {product.price.toLocaleString()}
+                RWF {product.price.toLocaleString()}
               </span>
               
               {recommendation.savings && (
                 <div className="flex items-center text-green-600">
                   <TrendingUp className="w-4 h-4 mr-1" />
                   <span className="text-sm font-medium">
-                    Save KSh {recommendation.savings.toLocaleString()}
+                    Save RWF {recommendation.savings.toLocaleString()}
                   </span>
                 </div>
               )}

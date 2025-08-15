@@ -1,22 +1,47 @@
 import React, { useState } from 'react';
-import { Search, MapPin, ShoppingCart, User, Menu, X } from 'lucide-react';
+import { Search, MapPin, ShoppingCart, User, Menu, X, LogOut } from 'lucide-react';
 import { Button } from '../ui/Button';
 
 interface HeaderProps {
   currentView: string;
   onViewChange: (view: string) => void;
   cartItems: number;
+  isAuthenticated?: boolean;
+  userRole?: string;
+  onSignOut?: () => void;
+  onCartClick?: () => void;
 }
 
-export function Header({ currentView, onViewChange, cartItems }: HeaderProps) {
+export function Header({ 
+  currentView, 
+  onViewChange, 
+  cartItems, 
+  isAuthenticated = false,
+  userRole,
+  onSignOut,
+  onCartClick
+}: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navigation = [
-    { name: 'Marketplace', id: 'marketplace' },
-    { name: 'Farmers', id: 'farmers' },
-    { name: 'Trends', id: 'trends' },
-    { name: 'Admin', id: 'admin' },
-  ];
+  const getNavigation = () => {
+    const baseNav = [
+      { name: 'Marketplace', id: 'marketplace' },
+      { name: 'Farmers', id: 'farmers' },
+      { name: 'Trends', id: 'trends' },
+    ];
+
+    if (userRole === 'admin') {
+      return [...baseNav, { name: 'Admin Dashboard', id: 'admin' }];
+    } else if (userRole === 'superadmin') {
+      return [...baseNav, { name: 'Super Admin', id: 'superadmin' }];
+    } else if (userRole === 'customer') {
+      return [...baseNav, { name: 'My Dashboard', id: 'customer-dashboard' }];
+    }
+
+    return baseNav;
+  };
+
+  const navigation = getNavigation();
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
@@ -53,10 +78,13 @@ export function Header({ currentView, onViewChange, cartItems }: HeaderProps) {
           <div className="flex items-center space-x-4">
             <div className="hidden sm:flex items-center space-x-2 text-sm text-gray-600">
               <MapPin className="w-4 h-4" />
-              <span>Nairobi, Kenya</span>
+              <span>Kigali, Rwanda</span>
             </div>
             
-            <button className="relative p-2 text-gray-600 hover:text-gray-900 transition-colors">
+            <button 
+              onClick={onCartClick}
+              className="relative p-2 text-gray-600 hover:text-gray-900 transition-colors"
+            >
               <ShoppingCart className="w-5 h-5" />
               {cartItems > 0 && (
                 <span className="absolute -top-1 -right-1 bg-green-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
@@ -65,10 +93,24 @@ export function Header({ currentView, onViewChange, cartItems }: HeaderProps) {
               )}
             </button>
 
-            <Button variant="outline" size="sm" className="hidden sm:flex">
-              <User className="w-4 h-4 mr-2" />
-              Sign In
-            </Button>
+            {isAuthenticated ? (
+              <div className="hidden sm:flex items-center space-x-2">
+                <Button variant="outline" size="sm" onClick={onSignOut}>
+                  <LogOut className="w-4 h-4 mr-2" />
+                  Sign Out
+                </Button>
+              </div>
+            ) : (
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="hidden sm:flex"
+                onClick={() => onViewChange('signin')}
+              >
+                <User className="w-4 h-4 mr-2" />
+                Sign In
+              </Button>
+            )}
 
             {/* Mobile menu button */}
             <button
@@ -100,10 +142,25 @@ export function Header({ currentView, onViewChange, cartItems }: HeaderProps) {
                   {item.name}
                 </button>
               ))}
-              <Button variant="outline" size="sm" className="mt-4 self-start">
-                <User className="w-4 h-4 mr-2" />
-                Sign In
-              </Button>
+              {isAuthenticated ? (
+                <Button variant="outline" size="sm" className="mt-4 self-start" onClick={onSignOut}>
+                  <LogOut className="w-4 h-4 mr-2" />
+                  Sign Out
+                </Button>
+              ) : (
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="mt-4 self-start"
+                  onClick={() => {
+                    onViewChange('signin');
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  <User className="w-4 h-4 mr-2" />
+                  Sign In
+                </Button>
+              )}
             </div>
           </div>
         )}

@@ -100,7 +100,7 @@ export function TrendsView() {
             <div className="p-4 bg-purple-50 rounded-lg border border-purple-200">
               <h4 className="font-medium text-purple-900 mb-2">Market Expansion</h4>
               <p className="text-purple-800 text-sm">
-                High demand detected in Kisumu region with limited supply. 
+                High demand detected in Butare region with limited supply. 
                 Consider expanding delivery options to capture this market opportunity.
               </p>
             </div>

@@ -36,13 +36,13 @@ export function TrendChart({ trend }: TrendChartProps) {
           <div>
             <p className="text-sm text-gray-600">Current Avg Price</p>
             <p className="text-2xl font-bold text-gray-900">
-              KSh {trend.averagePrice.toLocaleString()}
+              RWF {trend.averagePrice.toLocaleString()}
             </p>
           </div>
           <div>
             <p className="text-sm text-gray-600">Predicted Next Month</p>
             <p className="text-2xl font-bold text-green-600">
-              KSh {trend.prediction.nextMonth.toLocaleString()}
+              RWF {trend.prediction.nextMonth.toLocaleString()}
             </p>
           </div>
         </div>

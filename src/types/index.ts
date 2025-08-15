@@ -2,7 +2,7 @@ export interface User {
   id: string;
   name: string;
   email: string;
-  role: 'farmer' | 'customer' | 'admin';
+  role: 'farmer' | 'customer' | 'admin' | 'superadmin';
   location: {
     lat: number;
     lng: number;
@@ -11,6 +11,19 @@ export interface User {
   avatar?: string;
   phone?: string;
   createdAt: Date;
+}
+
+export interface CartItem {
+  id: string;
+  productId: string;
+  quantity: number;
+  price: number;
+  farmerId: string;
+}
+
+export interface Cart {
+  items: CartItem[];
+  total: number;
 }
 
 export interface Product {

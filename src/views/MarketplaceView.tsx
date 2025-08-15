@@ -16,8 +16,8 @@ export function MarketplaceView({ onAddToCart }: MarketplaceViewProps) {
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 1000]);
   const [sortBy, setSortBy] = useState('recommended');
 
-  // Mock user location (Nairobi)
-  const userLocation = { lat: -1.2921, lng: 36.8219 };
+  // Mock user location (Kigali)
+  const userLocation = { lat: -1.9441, lng: 30.0619 };
 
   // Generate AI recommendations
   const recommendations = useMemo(() => {

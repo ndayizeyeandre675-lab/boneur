@@ -12,8 +12,8 @@ export function FarmersView({ onViewProducts }: FarmersViewProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('rating');
 
-  // Mock user location (Nairobi)
-  const userLocation = { lat: -1.2921, lng: 36.8219 };
+  // Mock user location (Kigali)
+  const userLocation = { lat: -1.9441, lng: 30.0619 };
 
   const calculateDistance = (farmerLat: number, farmerLng: number) => {
     const R = 6371; // Earth's radius in km
@@ -80,7 +80,7 @@ export function FarmersView({ onViewProducts }: FarmersViewProps) {
             </div>
             <div className="mt-4 sm:mt-0 flex items-center space-x-2 text-sm text-gray-600">
               <MapPin className="w-4 h-4" />
-              <span>Showing farmers near Nairobi, Kenya</span>
+              <span>Showing farmers near Kigali, Rwanda</span>
             </div>
           </div>
         </div>

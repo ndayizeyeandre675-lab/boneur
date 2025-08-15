@@ -62,7 +62,7 @@ export function FarmerCard({ farmer, distance, onViewProducts }: FarmerCardProps
             )}
             <div className="flex items-center">
               <span className="text-green-600 font-medium">
-                KSh {farmer.stats.totalRevenue.toLocaleString()} revenue
+                RWF {farmer.stats.totalRevenue.toLocaleString()} revenue
               </span>
             </div>
           </div>

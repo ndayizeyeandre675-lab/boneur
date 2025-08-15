@@ -21,7 +21,7 @@ export function AdminDashboard() {
     },
     {
       name: 'Monthly Revenue',
-      value: 'KSh 2.4M',
+      value: 'RWF 9.6M',
       change: '+8%',
       changeType: 'positive' as const,
       icon: DollarSign,
@@ -46,14 +46,14 @@ export function AdminDashboard() {
     {
       id: 2,
       type: 'large_order',
-      message: 'Large order (KSh 15,000) placed by customer in Nairobi',
+      message: 'Large order (RWF 60,000) placed by customer in Kigali',
       time: '4 hours ago',
       status: 'info',
     },
     {
       id: 3,
       type: 'price_alert',
-      message: 'Chicken prices increased by 8% in Nakuru region',
+      message: 'Chicken prices increased by 8% in Huye region',
       time: '6 hours ago',
       status: 'warning',
     },
